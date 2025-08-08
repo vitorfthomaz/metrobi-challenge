@@ -1,69 +1,17 @@
-# React + TypeScript + Vite
+# Metrobi Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository is meant to solve the questions provided by Metrobi. It uses a scaffolding of a project with React + TypeScript + Vite just for the questions 3 and 6, since they require some sort of front-end visualization.
 
-Currently, two official plugins are available:
+All questions are written in the `src/questions` folder with is respective codes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Regarding the question 6, there was a lot of UI elements that were not relevant for the purpose of the question, so I purposefully ignored them, such as color patterns, ideal element positioning, proper spacings and so on.
 
-## Expanding the ESLint configuration
+# Running the project
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+On the console, run `npm install` and `npm run dev` in this order. The console will show on which URL the project is hosted on. After opening the project on the browser, check its console to see the results of the questions that don't render on the DOM.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# Changing values of the questions
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+To change the values of the questions that don't render on the DOM, just go to the desired question file and change the arguments of the method that is being called at the end of the file.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+You can disable a specific question by removing its corresponding import statement from the file `src/App.tsx`
